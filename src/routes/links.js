@@ -16,6 +16,7 @@ const db = require('../database');
          descripcion
       };
       await db.query('INSERT INTO links set ?', [newLink]);
+      req.flash('success', 'Link guardado correctamente');
      res.redirect('/links');
  });
 
@@ -29,6 +30,7 @@ const db = require('../database');
  router.get('/delete/:id', async(req, res) => {
       const {id} = req.params;
       await db.query('DELETE FROM links WHERE id = ?', [id]);
+      req.flash('success', 'Link eliminado correctamente');
       res.redirect('/links');
  });
 
@@ -47,6 +49,7 @@ router.post('/edit/:id', async(req, res) => {
       descripcion
    };
    await db.query('UPDATE links set ? WHERE id = ?', [newLink, id]);
+   req.flash('success', 'Link modificado correctamente');
   res.redirect('/links');
 });
 
