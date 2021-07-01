@@ -28,7 +28,7 @@ app.use(express.json());
 //Rutas
 app.use(require('./routes/routes.index'));
 app.use(require('./routes/auth'));
-app.use(require('./routes/links'));
+app.use('/links', require('./routes/links'));
 
 //Variables globales
 app.use((req,res,next) => {
