@@ -3,21 +3,21 @@
             <div class="col-md-4 offset-md-4">
                 <div class="card">
                     <div class="card-header bg-dark text-white text-center">
-                        <h3>Agrega tu link favorito</h3>
+                        <h3>Modificar Link</h3>
                     </div>
                     <div class="card-body">
-                        <form action="/links/add" method="POST">
+                        <form action="/links/edit/{{links.id}}" method="POST">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="title" placeholder="Titulo" autofocus>
+                                <input type="text" class="form-control" name="title" placeholder="Titulo" value="{{links.title}}">
                             </div>
                             <div class="form-group">
-                                <input type="url" name="url" class="form-control" placeholder="URL">
+                                <input type="url" name="url" class="form-control" placeholder="URL" value="{{links.url}}">
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" name="descripcion" style="resize: none;" placeholder="Descripcion" cols="30" rows="10"></textarea>
+                                <textarea class="form-control" name="descripcion" style="resize: none;" placeholder="Descripcion" cols="30" rows="10">{{links.descripcion}}</textarea>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+                                <button type="submit" class="btn btn-primary btn-block">Modificar</button>
                             </div>
                         </form>
                     </div>

@@ -9,11 +9,19 @@
                         </a>
                         <p class="m-2">{{descripcion}}</p>
                         <p>{{timeago created_at}}</p>
-                        <a href="" class="btn btn-danger">Eliminar</a>
-                        <a href="" class="btn btn-secondary">Editar</a>
+                        <a href="/links/delete/{{id}}" class="btn btn-danger">Eliminar</a>
+                        <a href="/links/edit/{{id}}" class="btn btn-secondary">Editar</a>
                     </div>
                 </div>
             </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>No hay registros disponibles</p>
+                <a href="/links/add" class="btn btn-primary">Crear Link</a>
+            </div>
+
+        </div>
         {{/each}}
     </div>
 </div>
