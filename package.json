@@ -4,7 +4,7 @@
   "description": "Proyecto con Nodejs y Mysql, Aplicación Completa (Login, Registro, CRUD, ES6+)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/"
   },
   "repository": {
     "type": "git",
