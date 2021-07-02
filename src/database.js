@@ -18,7 +18,7 @@ pool.getConnection((err, conn) => {
 
     if(conn){
         conn.release();
-        console.log("Conexion exitosa");
+       // console.log("Conexion exitosa");
     }
     return;
 });

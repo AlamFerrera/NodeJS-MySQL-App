@@ -12,11 +12,9 @@ passport.use('local.signin', new localStrategy({
     if(rows.length > 0){
         const user = rows[0];
         const validPassword = await helpers.comparePassword(password,user.password);
-      //  console.log(password);
-        //console.log(validPassword);
-       // return;
+     
         if(validPassword) {
-            done(null,user, req.flash('message', 'Bienvenido! ' + user.username));
+            done(null,user, req.flash('success', 'Bienvenido/a ' + user.username));
         }
         else{
             done(null, false, req.flash('message', 'Contraseña Incorrecta'));
@@ -46,7 +44,6 @@ passport.use('local.signup', new localStrategy({
 }));
 
 passport.serializeUser((user,done) => {
-    console.log(user.id);
     done(null,user.id);
 });
 
