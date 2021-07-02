@@ -17,6 +17,7 @@ passport.use('local.signup', new localStrategy({
     newUser.password = await helpers.encryptPassword(password);
    // const result = await db.query('INSERT INTO users SET ?', [newUser]);
     return done(null, newUser);
+    
 }));
 /*
 passport.serializeUser((user,done) => {
